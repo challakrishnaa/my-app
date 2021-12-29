@@ -1,5 +1,5 @@
 pipeline{
-  agent any
+	agent{label 'dev_slave'}
 	stages{
 		stage('Hello-world'){
 			steps{
