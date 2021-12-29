@@ -1,10 +1,17 @@
 pipeline{
-	agent{label 'dev_slave'}
+	agent any
 	stages{
-		stage('Hello-world'){
+		stage('checkoutcode'){
 			steps{
 				echo 'Welcome to multibranch pipeline'
 			}
 		}
+		stage('buildingthecode'){
+			steps{
+				echo 'Welcome to multibranch pipeline'
+			}
+		}
+		
 	}
+
      }
