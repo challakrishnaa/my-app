@@ -1,6 +1,9 @@
 pipeline{
    agent{label 'QA-Slave'}
-   tools{maven 'maven-3.8'}
+   envirnonment{
+   def mvnHOME=tool name: 'maven-3.8', type: 'maven'
+      def mvnCMD="${mvnHOME}/bin/mvn"
+   }
   stages{
     stage('ECKOUTCODE'){
       steps{
