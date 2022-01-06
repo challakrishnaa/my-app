@@ -18,7 +18,7 @@ pipeline{
      stage('deploy into container'){
         steps{
         sshagent(['ec2-user']) {
-       sh 'scp ssh -o StrictHostKeyChecking=no /target/*.war ec2-user@54.242.24.54:/tomcat9/webapps'
+       sh 'scp -o StrictHostKeyChecking=no /target/*.war ec2-user@54.242.24.54:/tomcat9/webapps'
            }
         }
      }
