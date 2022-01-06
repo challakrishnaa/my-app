@@ -1,14 +1,15 @@
 pipeline{
    agent{label 'QA-Slave'}
+   tools{maven 'maven-3.8'}
   stages{
     stage('ECKOUTCODE'){
       steps{
-      echo 'checkout  the code'
+      git 'https://github.com/challakrishnaa/my-app.git'
       }
     }
      stage('buildcode'){
         steps{
-     echo 'build the code'   
+       mvn clean package 
         }
      }
   
