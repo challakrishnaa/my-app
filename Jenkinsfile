@@ -6,7 +6,11 @@ pipeline{
       echo 'checkout  the code'
       }
     }
-  
+     stage('buildcode'){
+        steps{
+     echo 'build the code'   
+        }
+     }
   
   
   }
