@@ -9,7 +9,7 @@ pipeline{
     }
      stage('buildcode'){
         steps{
-       mvn clean package 
+        sh 'clean package' 
         }
      }
   
