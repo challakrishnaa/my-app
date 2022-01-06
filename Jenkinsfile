@@ -1,11 +1,11 @@
 pipeline{
-  agent{
-   label= 'QA-Slave'
+agent{
+   label = 'QA-Slave'
   }
   stages{
     stage('ECKOUTCODE'){
-      step{
-      echo ' checkout  the code '
+      steps{
+      echo 'checkout  the code'
       }
     }
   
