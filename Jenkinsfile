@@ -12,7 +12,7 @@ pipeline{
     }
      stage('buildcode'){
         steps{
-           sh "${mvnCMD} clean package"
+           sh "${mvnCMD} clean install package"
         }
      }
      stage('deploy into container'){
