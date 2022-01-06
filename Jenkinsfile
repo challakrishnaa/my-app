@@ -12,7 +12,7 @@ pipeline{
     }
      stage('buildcode'){
         steps{
-        sh 'mvn clean package' 
+           sh "${mvnCMD} clean package"
         }
      }
   
