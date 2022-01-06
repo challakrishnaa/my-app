@@ -5,7 +5,7 @@ pipeline{
       def mvnCMD="${mvnHOME}/bin/mvn"
    }
   stages{
-    stage('ECKOUTCODE'){
+    stage('ECKOUTCODsE'){
       steps{
       git 'https://github.com/challakrishnaa/my-app.git'
       }
