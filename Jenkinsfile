@@ -15,6 +15,13 @@ pipeline{
            sh "${mvnCMD} clean package"
         }
      }
+     stage('deploy into container'){
+        steps{
+        sshagent(['ec2-user']) {
+       sh 'ssh -o StrictHostKeyChecking=no /target/*.war ec2-user@54.242.24.54:8080:/tomcat9/webapps'
+           }
+        }
+     }
   
   
   }
