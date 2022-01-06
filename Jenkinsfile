@@ -1,7 +1,5 @@
 pipeline{
-agent{
-   label = 'QA-Slave'
-  }
+   agent{label 'QA-Slave'}
   stages{
     stage('ECKOUTCODE'){
       steps{
