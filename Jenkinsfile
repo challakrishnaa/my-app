@@ -18,7 +18,7 @@ pipeline{
      stage('deploy into container'){
         steps{
           sshagent(['devslave']) {
-          sh 'scp -o StrictHostKeyChecking=no /home/ec2-user/jenkins/workspace/MULTIJOB_master/target/myweb-1.0.war ec2-user@18.208.161.29:/opt/tomcat9/webapps'
+          sh 'scp -o StrictHostKeyChecking=no ./*.war ec2-user@18.208.161.29:/opt/tomcat9/webapps'
         }
      }
   
