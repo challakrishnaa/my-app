@@ -1,5 +1,5 @@
 pipeline{
-   agent{label 'devslave'}
+   agent{label 'uatlave'}
    environment{
    def mvnHOME=tool name: 'maven-3.8', type: 'maven'
       def mvnCMD="${mvnHOME}/bin/mvn"
@@ -7,7 +7,7 @@ pipeline{
   stages{
     stage('ECKOUTCODsE'){
       steps{
-      git branch: 'dev', url: 'https://github.com/challakrishnaa/my-app.git'
+      git branch: 'uat', url: 'https://github.com/challakrishnaa/my-app.git'
       }
     }
      stage('buildcode'){
@@ -17,8 +17,8 @@ pipeline{
      }
      stage('deploy into container'){
         steps{
-          sshagent(['devslave']) {
-          sh 'scp -o StrictHostKeyChecking=no ./*.war ec2-user@18.208.161.29:/opt/tomcat9/webapps'
+          sshagent(['uatslave']) {
+          sh 'scp -o StrictHostKeyChecking=no ./*.war ec2-user@54.166.93.221:/opt/tomcat9/webapps'
         }
      }
   
