@@ -1,5 +1,5 @@
 pipeline{
-   agent{label 'uatlave'}
+   agent{label 'uatslave'}
    environment{
    def mvnHOME=tool name: 'maven-3.8', type: 'maven'
       def mvnCMD="${mvnHOME}/bin/mvn"
