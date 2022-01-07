@@ -7,7 +7,7 @@ pipeline{
   stages{
     stage('ECKOUTCODsE'){
       steps{
-      git 'git branch: 'dev', url: 'https://github.com/challakrishnaa/my-app.git''
+      git branch: 'dev', url: 'https://github.com/challakrishnaa/my-app.git'
       }
     }
      stage('buildcode'){
